@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/nav_graph.xml">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/onboardFragment">
 
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.notionsapp.ui.fragment.note.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" />
+    <fragment
+        android:id="@+id/onboardFragment"
+        android:name="com.example.notionsapp.ui.fragment.onboard.OnboardFragment"
+        android:label="fragment_onboard"
+        tools:layout="@layout/fragment_onboard" >
+        <action
+            android:id="@+id/action_onboardFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardViewPagerFragment"
+        android:name="com.example.notionsapp.ui.fragment.onboard.OnboardViewPagerFragment"
+        android:label="fragment_onboard_view_pager"
+        tools:layout="@layout/fragment_onboard_view_pager" />
 </navigation>

@@ -1,60 +1,59 @@
 package com.example.notionsapp.ui.fragment.onboard
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.airbnb.lottie.Lottie
+import com.airbnb.lottie.LottieDrawable
 import com.example.notionsapp.R
+import com.example.notionsapp.databinding.FragmentOnboardViewPagerBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [OnboardViewFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class OnboardViewFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+class OnboardViewPagerFragment : Fragment() {
+    private lateinit var binding: FragmentOnboardViewPagerBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_onboard_view, container, false)
+        binding = FragmentOnboardViewPagerBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initialize()
+    }
+
+    private fun initialize() = with(binding) {
+        when(requireArguments().getInt(ARG_ONBOARD_POSITION)){
+            0 -> {
+                tvOnboard.text = getString(R.string.comfortable_funcionality)
+                lottieOnboard.setAnimation("lottie1.json")
+                lottieOnboard.repeatCount = LottieDrawable.INFINITE
+                lottieOnboard.repeatMode = LottieDrawable.REVERSE
+                lottieOnboard.playAnimation()
+
+            }
+            1 -> {
+                tvOnboard.text= getString(R.string.good_product)
+                lottieOnboard.setAnimation("lottie2.json")
+                lottieOnboard.repeatCount = LottieDrawable.INFINITE
+                lottieOnboard.repeatMode = LottieDrawable.REVERSE
+                lottieOnboard.playAnimation()
+            }
+            2 -> {
+                tvOnboard.text = getString(R.string.lot_of_features)
+                lottieOnboard.setAnimation("lottie3.json")
+                lottieOnboard.repeatCount = LottieDrawable.INFINITE
+                lottieOnboard.repeatMode = LottieDrawable.REVERSE
+                lottieOnboard.playAnimation()
+            }
+        }
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OnboardViewFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OnboardViewFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        const val ARG_ONBOARD_POSITION = "onboard"
     }
 }
