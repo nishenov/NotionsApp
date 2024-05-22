@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="dark_item">
+        <item name="android:background">@drawable/black_rectangle</item>
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+    <style name="white_item">
+        <item name="android:background">@drawable/light_rectangle</item>
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+    <style name="brown_item">
+        <item name="android:background">@drawable/brown_rectangle</item>
+        <item name="android:textColor">@color/dark_orange</item>
+    </style>
+</resources>

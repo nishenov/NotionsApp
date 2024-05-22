@@ -54,14 +54,39 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/light_black"
-        android:layout_marginHorizontal="28dp"
+        android:background="@drawable/black_rectangle"
+        android:layout_marginHorizontal="22dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:paddingVertical="5dp"
         android:textColor="@color/white"
         android:lines="1"
         android:paddingStart="10dp"
         android:inputType="text"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_notes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_note"/>
+
+        <ImageView
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="35dp"
+            android:layout_marginEnd="23dp"
+            android:src="@drawable/add_btn"/>
+
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
