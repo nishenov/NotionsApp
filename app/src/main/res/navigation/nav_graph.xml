@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/onboardFragment">
+    app:startDestination="@id/noteFragment">
 
     <fragment
         android:id="@+id/noteFragment"
         android:name="com.example.notionsapp.ui.fragment.note.NoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_noteDetailedFragment"
+            app:destination="@id/noteDetailedFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onboardFragment"
         android:name="com.example.notionsapp.ui.fragment.onboard.OnboardFragment"
@@ -24,4 +28,9 @@
         android:name="com.example.notionsapp.ui.fragment.onboard.OnboardViewPagerFragment"
         android:label="fragment_onboard_view_pager"
         tools:layout="@layout/fragment_onboard_view_pager" />
+    <fragment
+        android:id="@+id/noteDetailedFragment"
+        android:name="com.example.notionsapp.ui.fragment.note.NoteDetailedFragment"
+        android:label="fragment_note_detailed"
+        tools:layout="@layout/fragment_note_detailed" />
 </navigation>

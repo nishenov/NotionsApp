@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="4dp"
+    android:background="@drawable/black_rectangle">
+    <TextView
+        android:id="@+id/tv_item_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="15dp"
+        android:lines="1"
+        tools:text="@string/to_do"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/light_grey"/>
+    <TextView
+        android:id="@+id/tv_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:lines="1"
+        android:layout_marginStart="15dp"
+        android:textSize="14sp"
+        tools:text ="Работы с проектом, и тд"
+        tools:ignore="SmallSp"
+        android:textColor="@color/light_grey"/>
+    <TextView
+        android:id="@+id/tv_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text = "6 мая \n14:22"
+        android:textSize="10sp"
+        android:layout_marginEnd="5dp"
+        tools:ignore="SmallSp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

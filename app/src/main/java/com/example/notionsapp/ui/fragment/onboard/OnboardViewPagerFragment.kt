@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.airbnb.lottie.Lottie
 import com.airbnb.lottie.LottieDrawable
 import com.example.notionsapp.R
 import com.example.notionsapp.databinding.FragmentOnboardViewPagerBinding

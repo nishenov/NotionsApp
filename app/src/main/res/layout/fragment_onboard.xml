@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.onboard.OnboardFragment"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
     
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager2"
