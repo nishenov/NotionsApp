@@ -12,4 +12,5 @@
     <string name="done">Готово</string>
     <string name="header">Заголовок</string>
     <string name="description">Описание</string>
+    <string name="delete_question">Вы хотите удалить эту заметку?</string>
 </resources>

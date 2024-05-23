@@ -19,6 +19,7 @@ class NoteDetailedFragment : Fragment() {
     private lateinit var binding: FragmentNoteDetailedBinding
     private var textColor: Int = R.color.dark_orange
     private var backgroundColor: Int = R.color.brown
+    private var noteId : Int = -1
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -30,7 +31,21 @@ class NoteDetailedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        update()
         setupClickListeners()
+    }
+
+    private fun update() {
+        arguments?.let {
+            noteId = it.getInt("noteId", -1)
+        }
+        if (noteId != -1){
+            val args = App().getInstance()?.noteDao()?.getNote(noteId)
+            args?.let { model->
+                binding.etHeader.setText(model.header)
+                binding.etDescription.setText(model.description)
+            }
+        }
     }
 
     private fun setupClickListeners() {
@@ -53,6 +68,14 @@ class NoteDetailedFragment : Fragment() {
             val etHeader = binding.etHeader.text.toString()
             val etDescription = binding.etDescription.text.toString()
             val currentTime = getCurrentDateTime()
+            if (noteId != -1){
+                val updateNote = NoteModel(etHeader, etDescription, currentTime, textColor, backgroundColor)
+                updateNote.id = noteId
+                App().getInstance()?.noteDao()?.updateNote(updateNote)
+            }
+            else{
+                App().getInstance()?.noteDao()?.updateNote(NoteModel(etHeader, etDescription, currentTime, textColor, backgroundColor))
+            }
             App().getInstance()?.noteDao()?.insertNote(NoteModel(etHeader, etDescription, currentTime, textColor, backgroundColor))
             findNavController().navigateUp()
         }
