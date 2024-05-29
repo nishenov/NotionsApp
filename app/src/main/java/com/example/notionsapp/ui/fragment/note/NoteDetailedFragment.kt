@@ -74,9 +74,8 @@ class NoteDetailedFragment : Fragment() {
                 App().getInstance()?.noteDao()?.updateNote(updateNote)
             }
             else{
-                App().getInstance()?.noteDao()?.updateNote(NoteModel(etHeader, etDescription, currentTime, textColor, backgroundColor))
+                App().getInstance()?.noteDao()?.insertNote(NoteModel(etHeader, etDescription, currentTime, textColor, backgroundColor))
             }
-            App().getInstance()?.noteDao()?.insertNote(NoteModel(etHeader, etDescription, currentTime, textColor, backgroundColor))
             findNavController().navigateUp()
         }
         binding.imgBackArrow.setOnClickListener{

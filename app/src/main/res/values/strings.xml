@@ -13,4 +13,7 @@
     <string name="header">Заголовок</string>
     <string name="description">Описание</string>
     <string name="delete_question">Вы хотите удалить эту заметку?</string>
+    <string name="id_client_token">756310620301-q46hf8s4seqqcci2fdg9ph9hdihd5qki.apps.googleusercontent.com</string>
+    <string name="login_with_google">Войти через гугл</string>
+    <string name="google">Регистрация по Google</string>
 </resources>

@@ -70,7 +70,7 @@ class OnboardFragment : Fragment() {
             }
         }
         binding.tvStart.setOnClickListener {
-            findNavController().navigate(OnboardFragmentDirections.actionOnboardFragmentToNoteFragment())
+            findNavController().navigate(OnboardFragmentDirections.actionOnboardFragmentToSignUpFragment())
         }
     }
 

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_onboardFragment_to_noteFragment"
             app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_onboardFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardViewPagerFragment"
@@ -36,5 +39,14 @@
         <argument
             android:name="noteId"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.notionsapp.ui.fragment.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
     </fragment>
 </navigation>
