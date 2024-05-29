@@ -16,10 +16,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         sharedPreferences = PreferenceHelper().unit(this)
 
-        if (!sharedPreferences.isOnBoardShow) {
+        if (!sharedPreferences.isOnBoardShow&&!sharedPreferences.isSignedIn) {
             findNavController(R.id.nav_host_fragment).navigate(R.id.onboardFragment)
             sharedPreferences.isOnBoardShow = true
-        } else {
+        }
+        else if (!sharedPreferences.isOnBoardShow == false && !sharedPreferences.isSignedIn){
+            findNavController(R.id.nav_host_fragment).navigate(R.id.signUpFragment)
+            sharedPreferences.isSignedIn = true
+        }
+        else {
             findNavController(R.id.nav_host_fragment).navigate(R.id.noteFragment)
         }
     }

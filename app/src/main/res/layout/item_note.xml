@@ -7,6 +7,7 @@
     android:layout_marginHorizontal="20dp"
     android:layout_marginVertical="4dp"
     android:background="@drawable/black_rectangle">
+
     <TextView
         android:id="@+id/tv_item_header"
         app:layout_constraintTop_toTopOf="parent"

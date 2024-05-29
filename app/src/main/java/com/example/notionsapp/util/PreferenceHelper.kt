@@ -18,4 +18,11 @@ class PreferenceHelper {
     var isOnBoardShow: Boolean
         get() = sharedPreference.getBoolean("board", false)
         set(value) = sharedPreference.edit().putBoolean("board", value)!!.apply()
+    var isSignedIn: Boolean
+        get() = sharedPreference.getBoolean("board", false)
+        set(value) = sharedPreference.edit().putBoolean("board", value)!!.apply()
+
+    var isGridLayout: Boolean
+        get() = sharedPreference.getBoolean("layout", false)
+        set(value) = sharedPreference.edit().putBoolean("layout", value)!!.apply()
 }

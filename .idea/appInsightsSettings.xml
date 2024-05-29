@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.notionsapp" />
+                  <option name="mobileSdkAppId" value="1:756310620301:android:70a0cc22c38423b9994ac4" />
+                  <option name="projectId" value="noteauthentification" />
+                  <option name="projectNumber" value="756310620301" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
