@@ -49,4 +49,9 @@
             android:id="@+id/action_signUpFragment_to_noteFragment"
             app:destination="@id/noteFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.notionsapp.ui.fragment.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 </navigation>
